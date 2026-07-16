@@ -1,464 +1,830 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nepali Festivals 2026</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          },
-          colors: {
-            pink: { 400: '#f472b6', 500: '#ec4899' },
-            purple: { 400: '#c084fc', 500: '#a855f7' }
-          }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nepali Festivals 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    colors: {
+                        pink: { 400: '#f472b6', 500: '#ec4899' },
+                        purple: { 400: '#c084fc', 500: '#a855f7' }
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-  <style>
-    /* Inter everywhere */
-    body{font-family:'Inter',sans-serif;background:#0f0715;overflow:hidden;color:#f5f5f4;}
+    </script>
+    <style>
+        /* Inter everywhere */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0715;
+            overflow: hidden;
+            color: #f5f5f4;
+        }
 
-    /* Animated gradient bg */
-    .bg-animated{position:fixed;inset:0;z-index:0;
-      background:linear-gradient(-45deg,#0f0715,#160b1e,#1f102b,#150821);
-      background-size:400% 400%;animation:gradientMove 20s ease infinite;}
-    @keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        /* Animated gradient bg */
+        .bg-animated {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(-45deg, #0f0715, #160b1e, #1f102b, #150821);
+            background-size: 400% 400%;
+            animation: gradientMove 20s ease infinite;
+        }
 
-    /* Floating warm orbs */
-    .orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.30;z-index:0;animation:float 16s ease-in-out infinite;}
-    .orb-1{background:#ec4899} .orb-2{background:#a855f7} .orb-3{background:#d946ef} .orb-4{background:#8b5cf6}
-    @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-40px) scale(1.1)}66%{transform:translate(-30px,50px) scale(.95)}}
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%
+            }
 
-    /* Glass */
-    .glass{background:rgba(255,255,255,.05);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-      border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.07);}
-    .glass-soft{background:rgba(255,255,255,.035);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);}
+            50% {
+                background-position: 100% 50%
+            }
 
-    /* Slides + smooth transition */
-    .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-      opacity:0;visibility:hidden;transform:translateY(36px) scale(.97);
-      transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1),visibility .55s;
-      padding:2.5rem 4rem;z-index:5;overflow-y:auto;}
-    .slide.active{opacity:1;visibility:visible;transform:translateY(0) scale(1);}
+            100% {
+                background-position: 0% 50%
+            }
+        }
 
-    /* Staggered reveal */
-    .slide.active .reveal{animation:revealUp .65s cubic-bezier(.16,1,.3,1) both;}
-    .slide.active .reveal:nth-child(1){animation-delay:.05s}
-    .slide.active .reveal:nth-child(2){animation-delay:.13s}
-    .slide.active .reveal:nth-child(3){animation-delay:.21s}
-    .slide.active .reveal:nth-child(4){animation-delay:.29s}
-    .slide.active .reveal:nth-child(5){animation-delay:.37s}
-    .slide.active .reveal:nth-child(6){animation-delay:.45s}
-    .slide.active .reveal:nth-child(7){animation-delay:.53s}
-    @keyframes revealUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+        /* Floating warm orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: .30;
+            z-index: 0;
+            animation: float 16s ease-in-out infinite;
+        }
 
-    /* Animated gradient highlight text */
-    .hl{background:linear-gradient(90deg,#ec4899,#a855f7,#d946ef,#8b5cf6,#ec4899);background-size:300% 100%;
-      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite;}
-    @keyframes shimmer{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+        .orb-1 {
+            background: #ec4899
+        }
 
-    /* Badges (4 colors) */
-    .badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:700;
-      letter-spacing:.09em;text-transform:uppercase;padding:.35rem .8rem;border-radius:999px;}
-    .badge-1{background:rgba(236,72,153,.15);border:1px solid rgba(236,72,153,.4);color:#fbcfe8;}
-    .badge-2{background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.4);color:#e9d5ff;}
-    .badge-3{background:rgba(217,70,239,.15);border:1px solid rgba(217,70,239,.4);color:#f5d0fe;}
-    .badge-4{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.4);color:#ddd6fe;}
+        .orb-2 {
+            background: #a855f7
+        }
 
-    /* Multi-color BUTTONS (generic, reusable) */
-    .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.85rem;
-      padding:.7rem 1.4rem;border-radius:999px;cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);
-      border:1px solid transparent;}
-    .btn:hover{transform:translateY(-3px) scale(1.04);}
-    .btn:active{transform:scale(.96);}
-    .btn-gradient{background:linear-gradient(90deg,#ec4899,#a855f7,#d946ef,#8b5cf6);color:#fff;font-weight:700;}
-    .btn-gradient:hover{box-shadow:0 8px 30px rgba(168,85,247,.45);}
+        .orb-3 {
+            background: #d946ef
+        }
 
-    /* Hover lift card */
-    .hover-lift{transition:all .35s cubic-bezier(.16,1,.3,1);}
-    .hover-lift:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.45);box-shadow:0 12px 40px rgba(168,85,247,.18);}
+        .orb-4 {
+            background: #8b5cf6
+        }
 
-    /* Glowing number */
-    .glow-num{text-shadow:0 0 26px rgba(236,72,153,.5);}
+        @keyframes float {
 
-    /* Nav buttons smooth */
-    .nav-btn{transition:all .3s cubic-bezier(.16,1,.3,1);}
-    .nav-btn:hover{transform:scale(1.12);box-shadow:0 0 24px rgba(168,85,247,.5);}
-    .nav-btn:active{transform:scale(.94);}
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1)
+            }
 
-    /* Grid bg */
-    .grid-bg{background-image:linear-gradient(rgba(168,85,247,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.05) 1px,transparent 1px);background-size:42px 42px;}
-    .fade-edge{mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 60%,transparent 100%);}
+            33% {
+                transform: translate(50px, -40px) scale(1.1)
+            }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#12101c}
-    ::-webkit-scrollbar-thumb{background:linear-gradient(#ec4899,#a855f7);border-radius:10px}
-  </style>
+            66% {
+                transform: translate(-30px, 50px) scale(.95)
+            }
+        }
+
+        /* Glass */
+        .glass {
+            background: rgba(255, 255, 255, .05);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, .12);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .07);
+        }
+
+        .glass-soft {
+            background: rgba(255, 255, 255, .035);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        /* Slides + smooth transition */
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(36px) scale(.97);
+            transition: opacity .55s cubic-bezier(.16, 1, .3, 1), transform .55s cubic-bezier(.16, 1, .3, 1), visibility .55s;
+            padding: 2.5rem 4rem;
+            z-index: 5;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Staggered reveal */
+        .slide.active .reveal {
+            animation: revealUp .65s cubic-bezier(.16, 1, .3, 1) both;
+        }
+
+        .slide.active .reveal:nth-child(1) {
+            animation-delay: .05s
+        }
+
+        .slide.active .reveal:nth-child(2) {
+            animation-delay: .13s
+        }
+
+        .slide.active .reveal:nth-child(3) {
+            animation-delay: .21s
+        }
+
+        .slide.active .reveal:nth-child(4) {
+            animation-delay: .29s
+        }
+
+        .slide.active .reveal:nth-child(5) {
+            animation-delay: .37s
+        }
+
+        .slide.active .reveal:nth-child(6) {
+            animation-delay: .45s
+        }
+
+        .slide.active .reveal:nth-child(7) {
+            animation-delay: .53s
+        }
+
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        /* Animated gradient highlight text */
+        .hl {
+            background: linear-gradient(90deg, #ec4899, #a855f7, #d946ef, #8b5cf6, #ec4899);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 6s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%
+            }
+
+            100% {
+                background-position: 300% 50%
+            }
+        }
+
+        /* Badges (4 colors) */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            padding: .35rem .8rem;
+            border-radius: 999px;
+        }
+
+        .badge-1 {
+            background: rgba(236, 72, 153, .15);
+            border: 1px solid rgba(236, 72, 153, .4);
+            color: #fbcfe8;
+        }
+
+        .badge-2 {
+            background: rgba(168, 85, 247, .15);
+            border: 1px solid rgba(168, 85, 247, .4);
+            color: #e9d5ff;
+        }
+
+        .badge-3 {
+            background: rgba(217, 70, 239, .15);
+            border: 1px solid rgba(217, 70, 239, .4);
+            color: #f5d0fe;
+        }
+
+        .badge-4 {
+            background: rgba(139, 92, 246, .15);
+            border: 1px solid rgba(139, 92, 246, .4);
+            color: #ddd6fe;
+        }
+
+        /* Multi-color BUTTONS (generic, reusable) */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-weight: 600;
+            font-size: .85rem;
+            padding: .7rem 1.4rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all .3s cubic-bezier(.16, 1, .3, 1);
+            border: 1px solid transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.04);
+        }
+
+        .btn:active {
+            transform: scale(.96);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, #ec4899, #a855f7, #d946ef, #8b5cf6);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .btn-gradient:hover {
+            box-shadow: 0 8px 30px rgba(168, 85, 247, .45);
+        }
+
+        /* Hover lift card */
+        .hover-lift {
+            transition: all .35s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            border-color: rgba(168, 85, 247, .45);
+            box-shadow: 0 12px 40px rgba(168, 85, 247, .18);
+        }
+
+        /* Glowing number */
+        .glow-num {
+            text-shadow: 0 0 26px rgba(236, 72, 153, .5);
+        }
+
+        /* Nav buttons smooth */
+        .nav-btn {
+            transition: all .3s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.12);
+            box-shadow: 0 0 24px rgba(168, 85, 247, .5);
+        }
+
+        .nav-btn:active {
+            transform: scale(.94);
+        }
+
+        /* Grid bg */
+        .grid-bg {
+            background-image: linear-gradient(rgba(168, 85, 247, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 85, 247, .05) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+
+        .fade-edge {
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 60%, transparent 100%);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #12101c
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#ec4899, #a855f7);
+            border-radius: 10px
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            animation: confetti-fall 2.5s ease-out forwards;
+        }
+
+        .shape-flower {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        .shape-circle {
+            border-radius: 50%;
+        }
+
+        .shape-square {
+            border-radius: 2px;
+        }
+
+        .shape-triangle {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                opacity: 1;
+                transform: translate(var(--startX), var(--startY)) scale(0) rotate(0deg);
+            }
+
+            15% {
+                opacity: 1;
+                transform: translate(var(--midX), var(--midY)) scale(1.2) rotate(var(--rot1));
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(var(--endX), var(--endY)) scale(0.8) rotate(var(--rot2));
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Background animations -->
-  <div class="bg-animated"></div>
-  <div class="grid-bg fade-edge fixed inset-0 z-0"></div>
-  <div class="orb orb-1" style="top:-100px;left:-100px;width:380px;height:380px"></div>
-  <div class="orb orb-2" style="bottom:-80px;right:10%;width:320px;height:320px;animation-delay:-4s"></div>
-  <div class="orb orb-3" style="top:30%;left:55%;width:300px;height:300px;animation-delay:-8s"></div>
-  <div class="orb orb-4" style="bottom:20%;left:5%;width:260px;height:260px;animation-delay:-11s"></div>
+    <!-- Background animations -->
+    <div class="bg-animated"></div>
+    <div class="grid-bg fade-edge fixed inset-0 z-0"></div>
+    <div class="orb orb-1" style="top:-100px;left:-100px;width:380px;height:380px"></div>
+    <div class="orb orb-2" style="bottom:-80px;right:10%;width:320px;height:320px;animation-delay:-4s"></div>
+    <div class="orb orb-3" style="top:30%;left:55%;width:300px;height:300px;animation-delay:-8s"></div>
+    <div class="orb orb-4" style="bottom:20%;left:5%;width:260px;height:260px;animation-delay:-11s"></div>
 
-  <!-- Fixed top: brand + progress bar + counter -->
-  <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-3 glass">
-    <div class="flex items-center gap-3">
-      <i class="fas fa-calendar-star text-pink-500 text-xl"></i>
-      <span class="text-white font-bold text-sm tracking-wider">FESTIVAL COUNTDOWNS</span>
+    <!-- Fixed top: brand + progress bar + counter -->
+    <div class="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-3 glass">
+        <div class="flex items-center gap-3 w-1/3">
+            <i class="fas fa-calendar-star text-pink-500 text-xl"></i>
+            <span class="text-white font-bold text-sm tracking-wider hidden sm:block">FESTIVAL COUNTDOWNS</span>
+        </div>
+
+        <div class="flex justify-center w-1/3">
+            <div
+                class="glass-soft px-4 py-1.5 rounded-full border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+                <span id="system-date"
+                    class="text-white/95 font-medium text-xs sm:text-sm tracking-wide drop-shadow-md flex items-center justify-center whitespace-nowrap">
+                    <i class="far fa-clock text-pink-400 mr-2"></i>
+                    <span>Loading date...</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-4 w-1/3">
+            <div class="w-24 sm:w-48 h-1 bg-white/10 rounded overflow-hidden hidden md:block">
+                <div id="progress" class="h-full w-0 rounded"
+                    style="background:linear-gradient(90deg,#ec4899,#a855f7,#d946ef,#8b5cf6);"></div>
+            </div>
+            <span id="counter" class="text-white/60 text-sm font-mono">01 / 08</span>
+        </div>
     </div>
-    <div class="flex items-center gap-4">
-      <div class="w-48 h-1 bg-white/10 rounded overflow-hidden">
-        <div id="progress" class="h-full w-0 rounded" style="background:linear-gradient(90deg,#ec4899,#a855f7,#d946ef,#8b5cf6);"></div>
-      </div>
-      <span id="counter" class="text-white/60 text-sm font-mono">01 / 08</span>
+
+    <!-- Main slides container -->
+    <main id="deck" class="relative w-full h-screen z-10">
+
+        <!-- Slide 1: Cover -->
+        <section class="slide active">
+            <div class="max-w-4xl w-full glass p-10 rounded-3xl space-y-6 text-center">
+                <div class="badge badge-1 mx-auto reveal"><i class="fas fa-sparkles"></i> 2026 Edition</div>
+                <h1 class="text-6xl font-bold reveal"><span class="hl">Nepali Festivals Countdown</span></h1>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">Track the exact time remaining until the most
+                    joyous cultural celebrations in Nepal ❤️🫶🏼</p>
+                <div class="pt-6 reveal">
+                    <button class="btn btn-gradient" onclick="nextSlide()">
+                        <i class="fas fa-play"></i> Open
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Nag Panchami -->
+        <section class="slide">
+            <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
+                <div class="badge badge-1 reveal"><i class="fas fa-snake"></i> August 17, 2026 | Bhadra 1, 2083</div>
+                <h2 class="text-6xl font-bold reveal"><span class="hl">नाग पञ्चमी</span></h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">The auspicious day to worship the serpent
+                    deities for prosperity and protection.</p>
+
+                <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-08-17T00:00:00">
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Janai Purnima -->
+        <section class="slide">
+            <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
+                <div class="badge badge-2 reveal"><i class="fas fa-om"></i> August 28, 2026 | Bhadra 12, 2083</div>
+                <h2 class="text-6xl font-bold reveal"><span class="hl">जनै पूर्णिमा</span></h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">The sacred thread festival celebrating purity
+                    and the bond of protection.</p>
+
+                <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-08-28T00:00:00">
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Krishna Janmastami -->
+        <section class="slide">
+            <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
+                <div class="badge badge-3 reveal"><i class="fas fa-feather"></i> September 4, 2026 | Bhadra 19, 2083
+                </div>
+                <h2 class="text-6xl font-bold reveal"><span class="hl">श्रीकृष्ण जन्माष्टमी</span></h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">Commemorating the birth of Lord Krishna with
+                    devotion, music, and fasting.</p>
+
+                <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-09-04T00:00:00">
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Teej -->
+        <section class="slide">
+            <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
+                <div class="badge badge-4 reveal"><i class="fas fa-music"></i> September 14, 2026 | Bhadra 29, 2083
+                </div>
+                <h2 class="text-6xl font-bold reveal"><span class="hl">हरितालिका तीज</span></h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">A vibrant festival for women marked by
+                    fasting, prayers for family wellbeing, and joyful dancing.</p>
+
+                <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-09-14T00:00:00">
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Dashain -->
+        <section class="slide">
+            <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
+                <div class="badge badge-1 reveal"><i class="fas fa-dharmachakra"></i> October 21, 2026 | Kartik 5, 2083
+                </div>
+                <h2 class="text-6xl font-bold reveal"><span class="hl">विजया दशमी (दशैं)</span></h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">The biggest festival celebrating the victory
+                    of good over evil. Time for family, Tika, and Jamara.</p>
+
+                <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-10-21T00:00:00">
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Tihar -->
+        <section class="slide">
+            <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
+                <div class="badge badge-2 reveal"><i class="fas fa-fire"></i> November 11, 2026 | Kartik 26, 2083</div>
+                <h2 class="text-6xl font-bold reveal"><span class="hl">भाइटीका (तिहार)</span></h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">The festival of lights, flowers, and the
+                    beautiful bond between brothers and sisters.</p>
+
+                <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-11-11T00:00:00">
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
+                    </div>
+                    <div class="text-4xl font-bold text-white/30 pt-4">:</div>
+                    <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
+                        <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
+                        <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Closing -->
+        <section class="slide">
+            <div class="max-w-4xl w-full glass p-10 rounded-3xl space-y-6 text-center">
+                <div class="badge badge-3 mx-auto reveal"><i class="fas fa-heart"></i> Celebrate Together</div>
+                <h2 class="text-5xl font-bold reveal"><span class="hl">Mark Your Calendars</span></h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">Start preparing for a year full of rich
+                    culture, family gatherings, and vibrant traditions.😍</p>
+                <div class="pt-6 reveal flex justify-center gap-4">
+                    <button class="btn glass-soft border border-pink-500/50 hover:bg-pink-500/20 text-white"
+                        onclick="celebrateFlourish(event)">
+                        <i class="fas fa-gift text-pink-400"></i> Celebrate!
+                    </button>
+                    <button class="btn btn-gradient" onclick="goTo(0)">
+                        <i class="fas fa-redo"></i> Restart ??
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navigation -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 glass rounded-full px-4 py-2">
+        <button id="prev"
+            class="nav-btn text-white/70 hover:text-white text-xl w-10 h-10 flex items-center justify-center rounded-full"><i
+                class="fas fa-chevron-left"></i></button>
+        <div id="dots" class="flex items-center gap-2"></div>
+        <button id="next"
+            class="nav-btn text-white/70 hover:text-white text-xl w-10 h-10 flex items-center justify-center rounded-full"><i
+                class="fas fa-chevron-right"></i></button>
     </div>
-  </div>
 
-  <!-- Main slides container -->
-  <main id="deck" class="relative w-full h-screen z-10">
-    
-    <!-- Slide 1: Cover -->
-    <section class="slide active">
-      <div class="max-w-4xl w-full glass p-10 rounded-3xl space-y-6 text-center">
-        <div class="badge badge-1 mx-auto reveal"><i class="fas fa-sparkles"></i> 2026 Edition</div>
-        <h1 class="text-6xl font-bold reveal"><span class="hl">Nepali Festivals Countdown</span></h1>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">Track the exact time remaining until the most joyous cultural celebrations in Nepal, fully mapped in English & Nepali dates.</p>
-        <div class="pt-6 reveal">
-          <button class="btn btn-gradient" onclick="nextSlide()">
-            <i class="fas fa-play"></i> Start Countdown
-          </button>
-        </div>
-      </div>
-    </section>
+    <script>
+        // Navigation Controller
+        const slides = document.querySelectorAll('.slide');
+        const total = slides.length;
+        let current = 0;
 
-    <!-- Slide 2: Nag Panchami -->
-    <section class="slide">
-      <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
-        <div class="badge badge-1 reveal"><i class="fas fa-snake"></i> August 17, 2026 | Bhadra 1, 2083</div>
-        <h2 class="text-6xl font-bold reveal"><span class="hl">Nag Panchami</span></h2>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">The auspicious day to worship the serpent deities for prosperity and protection.</p>
-        
-        <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-08-17T00:00:00">
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
-          </div>
-        </div>
-      </div>
-    </section>
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+        const dotsContainer = document.getElementById('dots');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
 
-    <!-- Slide 3: Janai Purnima -->
-    <section class="slide">
-      <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
-        <div class="badge badge-2 reveal"><i class="fas fa-om"></i> August 28, 2026 | Bhadra 12, 2083</div>
-        <h2 class="text-6xl font-bold reveal"><span class="hl">Janai Purnima</span></h2>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">The sacred thread festival celebrating purity and the bond of protection.</p>
-        
-        <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-08-28T00:00:00">
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 4: Krishna Janmastami -->
-    <section class="slide">
-      <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
-        <div class="badge badge-3 reveal"><i class="fas fa-feather"></i> September 4, 2026 | Bhadra 19, 2083</div>
-        <h2 class="text-6xl font-bold reveal"><span class="hl">Krishna Janmastami</span></h2>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">Commemorating the birth of Lord Krishna with devotion, music, and fasting.</p>
-        
-        <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-09-04T00:00:00">
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 5: Teej -->
-    <section class="slide">
-      <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
-        <div class="badge badge-4 reveal"><i class="fas fa-music"></i> September 14, 2026 | Bhadra 29, 2083</div>
-        <h2 class="text-6xl font-bold reveal"><span class="hl">Haritalika Teej</span></h2>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">A vibrant festival for women marked by fasting, prayers for family wellbeing, and joyful dancing.</p>
-        
-        <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-09-14T00:00:00">
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 6: Dashain -->
-    <section class="slide">
-      <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
-        <div class="badge badge-1 reveal"><i class="fas fa-dharmachakra"></i> October 21, 2026 | Kartik 5, 2083</div>
-        <h2 class="text-6xl font-bold reveal"><span class="hl">Bijaya Dashami (Dashain)</span></h2>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">The biggest festival celebrating the victory of good over evil. Time for family, Tika, and Jamara.</p>
-        
-        <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-10-21T00:00:00">
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 7: Tihar -->
-    <section class="slide">
-      <div class="max-w-5xl w-full glass p-8 rounded-3xl space-y-8 text-center flex flex-col items-center">
-        <div class="badge badge-2 reveal"><i class="fas fa-fire"></i> November 11, 2026 | Kartik 26, 2083</div>
-        <h2 class="text-6xl font-bold reveal"><span class="hl">Bhai Tika (Tihar)</span></h2>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">The festival of lights, flowers, and the beautiful bond between brothers and sisters.</p>
-        
-        <div class="flex justify-center gap-4 reveal cd-wrapper" data-target="2026-11-11T00:00:00">
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-d">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Days</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-h">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Hours</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-m">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Mins</div>
-          </div>
-          <div class="text-4xl font-bold text-white/30 pt-4">:</div>
-          <div class="glass-soft p-6 rounded-2xl hover-lift min-w-[120px]">
-            <div class="text-5xl font-mono font-bold glow-num cd-s">00</div>
-            <div class="text-sm text-white/50 uppercase tracking-widest mt-2">Secs</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 8: Closing -->
-    <section class="slide">
-      <div class="max-w-4xl w-full glass p-10 rounded-3xl space-y-6 text-center">
-        <div class="badge badge-3 mx-auto reveal"><i class="fas fa-heart"></i> Celebrate Together</div>
-        <h2 class="text-5xl font-bold reveal"><span class="hl">Mark Your Calendars</span></h2>
-        <p class="text-lg text-white/70 max-w-2xl mx-auto reveal">Start preparing for a year full of rich culture, family gatherings, and vibrant traditions.</p>
-        <div class="pt-6 reveal flex justify-center gap-4">
-          <button class="btn btn-gradient" onclick="goTo(0)">
-            <i class="fas fa-redo"></i> Restart Deck
-          </button>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Navigation -->
-  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 glass rounded-full px-4 py-2">
-    <button id="prev" class="nav-btn text-white/70 hover:text-white text-xl w-10 h-10 flex items-center justify-center rounded-full"><i class="fas fa-chevron-left"></i></button>
-    <div id="dots" class="flex items-center gap-2"></div>
-    <button id="next" class="nav-btn text-white/70 hover:text-white text-xl w-10 h-10 flex items-center justify-center rounded-full"><i class="fas fa-chevron-right"></i></button>
-  </div>
-
-  <script>
-    // Navigation Controller
-    const slides = document.querySelectorAll('.slide');
-    const total = slides.length;
-    let current = 0;
-
-    const progress = document.getElementById('progress');
-    const counter = document.getElementById('counter');
-    const dotsContainer = document.getElementById('dots');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-
-    function buildDots() {
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i < total; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'w-2 h-2 rounded-full bg-white/20 transition-all duration-300';
-        dot.dataset.index = i;
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
-      }
-    }
-    buildDots();
-
-    function render() {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === current);
-      });
-      const dots = dotsContainer.querySelectorAll('button');
-      dots.forEach((dot, i) => {
-        if (i === current) {
-          dot.className = 'w-6 h-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300';
-        } else {
-          dot.className = 'w-2 h-2 rounded-full bg-white/20 transition-all duration-300';
+        function buildDots() {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'w-2 h-2 rounded-full bg-white/20 transition-all duration-300';
+                dot.dataset.index = i;
+                dot.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(dot);
+            }
         }
-      });
-      const pad = (n) => String(n).padStart(2, '0');
-      counter.textContent = `${pad(current+1)} / ${pad(total)}`;
-      progress.style.width = `${((current+1)/total)*100}%`;
-    }
+        buildDots();
 
-    function nextSlide() {
-      if (current < total - 1) { current++; render(); }
-    }
-
-    function prevSlide() {
-      if (current > 0) { current--; render(); }
-    }
-
-    function goTo(i) {
-      if (i >= 0 && i < total) { current = i; render(); }
-    }
-
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
-      if (e.key === 'Home') { e.preventDefault(); goTo(0); }
-      if (e.key === 'End') { e.preventDefault(); goTo(total-1); }
-    });
-
-    let touchStartX = 0;
-    document.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-    document.addEventListener('touchend', (e) => {
-      const diff = touchStartX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 50) {
-        if (diff > 0) nextSlide();
-        else prevSlide();
-      }
-    });
-
-    render();
-
-    // Countdown Logic
-    function updateCountdowns() {
-      const now = new Date().getTime();
-      document.querySelectorAll('.cd-wrapper').forEach(el => {
-        const target = new Date(el.dataset.target).getTime();
-        const diff = target - now;
-        
-        if (diff > 0) {
-          const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const s = Math.floor((diff % (1000 * 60)) / 1000);
-          
-          const pad = n => String(n).padStart(2, '0');
-          
-          el.querySelector('.cd-d').textContent = pad(d);
-          el.querySelector('.cd-h').textContent = pad(h);
-          el.querySelector('.cd-m').textContent = pad(m);
-          el.querySelector('.cd-s').textContent = pad(s);
-        } else {
-          el.innerHTML = '<div class="text-3xl font-bold text-pink-400 p-8 glass-soft rounded-2xl">Festival is Here!</div>';
+        function render() {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === current);
+            });
+            const dots = dotsContainer.querySelectorAll('button');
+            dots.forEach((dot, i) => {
+                if (i === current) {
+                    dot.className = 'w-6 h-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300';
+                } else {
+                    dot.className = 'w-2 h-2 rounded-full bg-white/20 transition-all duration-300';
+                }
+            });
+            const pad = (n) => String(n).padStart(2, '0');
+            counter.textContent = `${pad(current + 1)} / ${pad(total)}`;
+            progress.style.width = `${((current + 1) / total) * 100}%`;
         }
-      });
-    }
-    
-    // Initial call and set interval
-    updateCountdowns();
-    setInterval(updateCountdowns, 1000);
 
-  </script>
+        function nextSlide() {
+            if (current < total - 1) { current++; render(); }
+        }
+
+        function prevSlide() {
+            if (current > 0) { current--; render(); }
+        }
+
+        function goTo(i) {
+            if (i >= 0 && i < total) { current = i; render(); }
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+            if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+            if (e.key === 'End') { e.preventDefault(); goTo(total - 1); }
+        });
+
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        document.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
+            }
+        });
+
+        render();
+
+        // Countdown Logic
+        function updateCountdowns() {
+            const now = new Date().getTime();
+            document.querySelectorAll('.cd-wrapper').forEach(el => {
+                const target = new Date(el.dataset.target).getTime();
+                const diff = target - now;
+
+                if (diff > 0) {
+                    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    const pad = n => String(n).padStart(2, '0');
+
+                    el.querySelector('.cd-d').textContent = pad(d);
+                    el.querySelector('.cd-h').textContent = pad(h);
+                    el.querySelector('.cd-m').textContent = pad(m);
+                    el.querySelector('.cd-s').textContent = pad(s);
+                } else {
+                    el.innerHTML = '<div class="text-3xl font-bold text-pink-400 p-8 glass-soft rounded-2xl">Festival is Here!</div>';
+                }
+            });
+        }
+
+        // System Date Logic
+        function updateSystemDate() {
+            const now = new Date();
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            const dateStr = now.toLocaleDateString('en-US', options);
+            const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const dateEl = document.getElementById('system-date');
+            if (dateEl) {
+                dateEl.innerHTML = `<i class="far fa-clock text-pink-400 mr-2"></i><span>${dateStr} <span class="mx-2 text-white/40">|</span> <span class="text-white/80 font-mono">${timeStr}</span></span>`;
+            }
+        }
+
+        // Initial call and set interval
+        updateSystemDate();
+        setInterval(updateSystemDate, 1000);
+
+        updateCountdowns();
+        setInterval(updateCountdowns, 1000);
+
+        // Confetti Logic
+        function celebrateFlourish(e) {
+            const colors = ['#ec4899', '#a855f7', '#d946ef', '#8b5cf6', '#3b82f6', '#10b981', '#f59e0b'];
+            const shapes = ['shape-flower', 'shape-circle', 'shape-square', 'shape-triangle'];
+            const container = document.body;
+            const amount = 80;
+
+            const rect = e.currentTarget.getBoundingClientRect();
+            const btnX = rect.left + rect.width / 2;
+            const btnY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < amount; i++) {
+                const el = document.createElement('div');
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const shape = shapes[Math.floor(Math.random() * shapes.length)];
+
+                el.className = `confetti ${shape}`;
+
+                const size = Math.random() * 10 + 8; // 8px to 18px
+                el.style.width = `${size}px`;
+                el.style.height = `${size}px`;
+                el.style.backgroundColor = color;
+
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 150 + Math.random() * 250;
+
+                const endX = btnX + Math.cos(angle) * velocity * 2;
+                const endY = btnY + Math.sin(angle) * velocity * 2 + 300; // fall down
+
+                const midX = btnX + Math.cos(angle) * velocity * 0.8;
+                const midY = btnY + Math.sin(angle) * velocity * 0.8 - 100; // pop up
+
+                el.style.setProperty('--startX', `${btnX}px`);
+                el.style.setProperty('--startY', `${btnY}px`);
+                el.style.setProperty('--midX', `${midX}px`);
+                el.style.setProperty('--midY', `${midY}px`);
+                el.style.setProperty('--endX', `${endX}px`);
+                el.style.setProperty('--endY', `${endY}px`);
+
+                const rot1 = Math.random() * 360 + 180;
+                const rot2 = Math.random() * 720 + 360;
+                el.style.setProperty('--rot1', `${rot1}deg`);
+                el.style.setProperty('--rot2', `${rot2}deg`);
+
+                container.appendChild(el);
+
+                setTimeout(() => el.remove(), 2500);
+            }
+        }
+
+    </script>
 </body>
+
 </html>
